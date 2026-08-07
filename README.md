@@ -1,4 +1,4 @@
-# MICROKERNAL-F1
+# MICROKERNEL-F1
 
 A bare-metal cooperative task scheduler for the STM32F103 (Blue Pill), built from scratch at the register level — no HAL, no CubeMX, no shortcuts.
 
@@ -47,9 +47,7 @@ Most STM32 tutorials lean on ST's HAL or CubeMX-generated code, which hides exac
 - **Critical sections are scoped as narrowly as possible** — protecting only the specific shared-state operations that actually race with interrupt context, not blanket-disabling interrupts for convenience.
 - **No blocking calls where non-blocking is expected** — the eventual scheduler design assumes every task function returns promptly; blocking delays are reserved for one-off startup/settling waits only.
 
-## Status
 
-Actively in development. SysTick and USART drivers are complete and hardware-verified. Scheduler and shell layer are next.
 
 ## License
 
