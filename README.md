@@ -34,10 +34,19 @@ Most STM32 tutorials lean on ST's HAL or CubeMX-generated code, which hides exac
 ## Project structure
 
 ```
-├── SystemInit.c / .h   # Clock tree configuration (HSE, PLL, SystemCoreClock)
-├── SysTick.c / .h      # 1ms interrupt-driven tick source + blocking delay
-├── USART.c / .h        # Interrupt-driven USART1 driver (RX/TX ring buffers)
-└── main.c              # Application entry point
+main/
+├── inc/
+│   ├── scheduler.h
+│   ├── SysTick.h
+│   ├── SystemInit.h
+|   └── USART1.h
+├── src/
+│   ├── main.c
+│   ├── scheduler.c
+│   ├── SysTick.c
+|   ├── SystemInit.c
+│   └── USART1.c
+
 ```
 
 ## Design principles this project follows
